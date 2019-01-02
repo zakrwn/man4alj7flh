@@ -1,6 +1,9 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
 var guilds = {};
 client.on('guildBanAdd', function(guild) {
-            const rebellog = client.channels.find("name", "log"),
+            const rebellog = client.channels.find("log"),
             Onumber = 10,
   Otime = 10000
 guild.fetchAuditLogs({
@@ -37,7 +40,7 @@ console.log(error)
 });
  let channelc = {};
   client.on('channelCreate', async (channel) => {
-  const rebellog = client.channels.find("name", "log"),
+  const rebellog = client.channels.find("log"),
   Oguild = channel.guild,
   Onumber = 10,
   Otime = 10000;
@@ -90,3 +93,5 @@ channel.guild.owner.send(`<@!${channelremover.id}>
  channelr[channelremover.id].deleted = 0;
   },Otime)
   });
+
+ client.login(process.env.BOT_TOKEN); 
